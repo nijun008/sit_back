@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <meta name="keywords" content="摸鱼;休息片刻">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="休息片刻，让你的电脑看起来正在更新">
+    <title>休息片刻</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+  </head>
+
+  <body>
+    <!-- 移动端提示 -->
+    <div id="mobile-tips" class="wrapper">
+      <h3>休息片刻</h3>
+      <h4>让你的电脑看起来在更新</h4>
+      <p style="margin-top: 30px;color: #888;font-size: 12px;">暂不支持移动端，请使用PC访问</p>
+    </div>
+
+    
+    <!-- 控制部分 -->
+    <div id="control" class="wrapper">
+      <h3 class="main-title">休息片刻，让你的电脑看起来在更新</h3>
+      <button id="control-btn">更 新</button>
+      <div class="explain">
+        <p>更新时鼠标移入底部可以隐藏</p>
+        <p>退出：ESC或点击【结束】按钮</p>
+      </div>
+    </div>
+
+    <!-- windows -->
+    <div id="windows" class="wrapper">
+      <div>
+        <div class="loading">
+          <div class="loading-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="loading-content">
+            <div class="prog-row">
+              <div>正在进行更新</div>
+              <div class="prog-pancel">
+                <span id="prog">0</span>%
+              </div>
+            </div>
+            <div class="">请不要断开计算机电源</div>
+          </div>
+        </div>
+        <div id="footer-tips">计算机可能会重启几次</div>
+      </div>
+    </div>
+
+    <!-- Mac -->
+    <div id="mac" class="wrapper"></div>
+
+    <!-- TODO IOS -->
+    <div class="wrapper"></div>
+
+    <!-- TODO Android -->
+    <div class="wrapper"></div>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

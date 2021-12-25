@@ -1,0 +1,360 @@
+html, body, div, p, h1, h2, h3, h4, h5, h6, span, img, a, ul, li, ol, button, script {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+body {
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+}
+html, body, .wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+}
+.wrapper {
+  display: none;
+}
+
+/* 控制层 */
+#control {
+  display: block;
+  padding-top: 20vh;
+}
+.main-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 100px;
+}
+#control-btn {
+  margin-bottom: 20px;
+}
+
+
+/* mobile界面层 */
+#mobile-tips {
+  margin-top: 20vh;
+  font-size: .8rem;
+  display: none;
+}
+#mobile-tips h3 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: .8rem;
+}
+
+/* windows界面层 */
+.loading {
+  padding-top: 20vh;
+  height: calc(100% - 15vh);
+}
+.loading:hover #control-btn {
+  visibility: visible !important;
+}
+.explain {
+  color: #666;
+  line-height: 30px;
+  font-size: 13px;
+}
+.loading-content {
+  color: #fff;
+  letter-spacing: 1px;
+  padding-top: 40px;
+}
+.prog-row {
+  margin-bottom: 4px;
+}
+.prog-row > div {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 20px;
+}
+.prog-pancel {
+  width: 33px;
+  text-align: right;
+}
+#footer-tips {
+  width: 100%;
+  height: 15vh;
+  color: #fff;
+}
+
+.loading .loading-icon {
+  margin: auto;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+ 
+.loading-icon span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+ 
+.loading-icon span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+ 
+.loading-icon span:nth-child(1) {
+  animation: i1 5.5s 0.2s infinite;
+}
+ 
+.loading-icon span:nth-child(2) {
+  animation: i2 5.5s 0.4s infinite;
+}
+ 
+.loading-icon span:nth-child(3) {
+  animation: i3 5.5s 0.6s infinite;
+}
+ 
+.loading-icon span:nth-child(4) {
+  animation: i4 5.5s 0.8s infinite;
+}
+ 
+.loading-icon span:nth-child(5) {
+  animation: i5 5.5s 1s infinite;
+}
+ 
+.loading-icon span:nth-child(6) {
+  animation: i6 5.5s 1.2s infinite;
+}
+ 
+@keyframes i1 {
+  0% {
+    opacity: 1;
+    transform: rotate(190deg);
+    animation-timing-function: cubic-bezier(0.29, 0.44, 0.32, 0.74);
+  }
+  7% {
+    opacity: 1;
+    transform: rotate(300deg);
+    animation-timing-function: linear;
+  }
+  30% {
+    opacity: 1;
+    transform: rotate(450deg);
+    animation-timing-function: cubic-bezier(0.53, 0.27, 0.37, 0.81);
+  }
+  39% {
+    opacity: 1;
+    transform: rotate(645deg);
+    animation-timing-function: linear;
+  }
+  63% {
+    opacity: 1;
+    transform: rotate(800deg);
+    animation-timing-function: cubic-bezier(0.5, 0.32, 0.82, 0.54);
+  }
+  68% {
+    opacity: 1;
+    transform: rotate(920deg);
+    animation-timing-function: ease-in;
+  }
+  69% {
+    opacity: 0;
+    transform: rotate(930deg);
+  }
+}
+@keyframes i2 {
+  0% {
+    opacity: 1;
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0.29, 0.44, 0.32, 0.74);
+  }
+  7% {
+    opacity: 1;
+    transform: rotate(300deg);
+    animation-timing-function: linear;
+  }
+  30% {
+    opacity: 1;
+    transform: rotate(450deg);
+    animation-timing-function: cubic-bezier(0.53, 0.27, 0.37, 0.81);
+  }
+  39% {
+    opacity: 1;
+    transform: rotate(645deg);
+    animation-timing-function: linear;
+  }
+  63% {
+    opacity: 1;
+    transform: rotate(800deg);
+    animation-timing-function: cubic-bezier(0.5, 0.32, 0.82, 0.54);
+  }
+  68% {
+    opacity: 1;
+    transform: rotate(910deg);
+    animation-timing-function: ease-in;
+  }
+  69% {
+    opacity: 0;
+    transform: rotate(920deg);
+  }
+}
+@keyframes i3 {
+  0% {
+    opacity: 1;
+    transform: rotate(170deg);
+    animation-timing-function: cubic-bezier(0.29, 0.44, 0.32, 0.74);
+  }
+  7% {
+    opacity: 1;
+    transform: rotate(300deg);
+    animation-timing-function: linear;
+  }
+  30% {
+    opacity: 1;
+    transform: rotate(450deg);
+    animation-timing-function: cubic-bezier(0.53, 0.27, 0.37, 0.81);
+  }
+  39% {
+    opacity: 1;
+    transform: rotate(645deg);
+    animation-timing-function: linear;
+  }
+  63% {
+    opacity: 1;
+    transform: rotate(800deg);
+    animation-timing-function: cubic-bezier(0.5, 0.32, 0.82, 0.54);
+  }
+  68% {
+    opacity: 1;
+    transform: rotate(900deg);
+    animation-timing-function: ease-in;
+  }
+  69% {
+    opacity: 0;
+    transform: rotate(910deg);
+  }
+}
+@keyframes i4 {
+  0% {
+    opacity: 1;
+    transform: rotate(160deg);
+    animation-timing-function: cubic-bezier(0.29, 0.44, 0.32, 0.74);
+  }
+  7% {
+    opacity: 1;
+    transform: rotate(300deg);
+    animation-timing-function: linear;
+  }
+  30% {
+    opacity: 1;
+    transform: rotate(450deg);
+    animation-timing-function: cubic-bezier(0.53, 0.27, 0.37, 0.81);
+  }
+  39% {
+    opacity: 1;
+    transform: rotate(645deg);
+    animation-timing-function: linear;
+  }
+  63% {
+    opacity: 1;
+    transform: rotate(800deg);
+    animation-timing-function: cubic-bezier(0.5, 0.32, 0.82, 0.54);
+  }
+  68% {
+    opacity: 1;
+    transform: rotate(890deg);
+    animation-timing-function: ease-in;
+  }
+  69% {
+    opacity: 0;
+    transform: rotate(900deg);
+  }
+}
+@keyframes i5 {
+  0% {
+    opacity: 1;
+    transform: rotate(150deg);
+    animation-timing-function: cubic-bezier(0.29, 0.44, 0.32, 0.74);
+  }
+  7% {
+    opacity: 1;
+    transform: rotate(300deg);
+    animation-timing-function: linear;
+  }
+  30% {
+    opacity: 1;
+    transform: rotate(450deg);
+    animation-timing-function: cubic-bezier(0.53, 0.27, 0.37, 0.81);
+  }
+  39% {
+    opacity: 1;
+    transform: rotate(645deg);
+    animation-timing-function: linear;
+  }
+  63% {
+    opacity: 1;
+    transform: rotate(800deg);
+    animation-timing-function: cubic-bezier(0.5, 0.32, 0.82, 0.54);
+  }
+  68% {
+    opacity: 1;
+    transform: rotate(880deg);
+    animation-timing-function: ease-in;
+  }
+  69% {
+    opacity: 0;
+    transform: rotate(880deg);
+  }
+}
+@keyframes i6 {
+  0% {
+    opacity: 1;
+    transform: rotate(140deg);
+    animation-timing-function: cubic-bezier(0.29, 0.44, 0.32, 0.74);
+  }
+  7% {
+    opacity: 1;
+    transform: rotate(300deg);
+    animation-timing-function: linear;
+  }
+  30% {
+    opacity: 1;
+    transform: rotate(450deg);
+    animation-timing-function: cubic-bezier(0.53, 0.27, 0.37, 0.81);
+  }
+  39% {
+    opacity: 1;
+    transform: rotate(645deg);
+    animation-timing-function: linear;
+  }
+  63% {
+    opacity: 1;
+    transform: rotate(800deg);
+    animation-timing-function: cubic-bezier(0.5, 0.32, 0.82, 0.54);
+  }
+  68% {
+    opacity: 1;
+    transform: rotate(870deg);
+    animation-timing-function: ease-in;
+  }
+  69% {
+    opacity: 0;
+    transform: rotate(880deg);
+  }
+}
