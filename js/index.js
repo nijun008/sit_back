@@ -2,7 +2,7 @@ var config = {
   updateDuration: 60,             // 更新完成时间 单位：分钟
   completedExit: false,           // 更新完成是否退出
   initProg: 1,                    // 初始进度
-  ui: 'auto'                      // 更新界面类型
+  ui: undefined                   // 更新界面类型
 }
 
 window.onload = () => {
@@ -14,7 +14,7 @@ window.onload = () => {
   }
 }
 
-function isMobile(){
+function isMobile() {
   var userAgent = navigator.userAgent,Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"]
   return Agents.some((i) => {
     return userAgent.includes(i)
