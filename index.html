@@ -15,6 +15,10 @@
     <meta name="description" content="休息片刻，让你的电脑看起来正在更新">
     <title>休息片刻</title>
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./css/windows.css" />
+    <link rel="stylesheet" type="text/css" href="./css/mobile.css" />
+    <link rel="stylesheet" type="text/css" href="./css/mac.css" />
+
   </head>
 
   <body>
@@ -31,8 +35,8 @@
       <h3 class="main-title">休息片刻，让你的电脑看起来在更新</h3>
       <button id="control-btn">更 新</button>
       <div class="explain">
-        <p>更新时鼠标移入底部可以隐藏</p>
-        <p>退出：ESC或点击【结束】按钮</p>
+        <p>鼠标移入底部可以隐藏</p>
+        <p>退出更新：ESC</p>
       </div>
     </div>
 
@@ -56,7 +60,7 @@
                 <span id="prog">0</span>%
               </div>
             </div>
-            <div class="">请不要断开计算机电源</div>
+            <div class="">请保持计算机打开状态</div>
           </div>
         </div>
         <div id="footer-tips">计算机可能会重启几次</div>
@@ -64,13 +68,27 @@
     </div>
 
     <!-- Mac -->
-    <div id="mac" class="wrapper"></div>
+    <div id="mac" class="wrapper">
+      <div class="mac-logo-box">
+        <img src="images/logo_apple.png">
+      </div>
+      <div class="mac-prog-box">
+        <div class="max-prog">
+          <div id="prog-bar"></div>
+        </div>
+      </div>
+
+      <div class="mac-text">此更新需要几分钟时间完成，且屏幕将变暗长达一分钟。</div>
+      
+    </div>
 
     <!-- TODO IOS -->
     <div class="wrapper"></div>
 
     <!-- TODO Android -->
     <div class="wrapper"></div>
+
+    <div class="hidden-cursor"></div>
 
     <script src="./js/index.js"></script>
   </body>
