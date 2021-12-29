@@ -1,8 +1,8 @@
 var config = {
   updateDuration: 60,             // 更新完成时间 单位：分钟
   completedExit: false,           // 更新完成是否退出
-  initProg: 1,                    // 初始进度
-  ui: undefined                   // 更新界面类型
+  initProg: 5,                    // 初始进度
+  wrapperId: undefined            // 更新界面容器id
 }
 
 window.onload = () => {
@@ -10,6 +10,9 @@ window.onload = () => {
     document.getElementById('control').style.display = 'none'
     document.getElementById('mobile-tips').style.display = 'block'
   } else {
+    if (!config.wrapperId && isMac()) {
+      config.wrapperId = 'mac'
+    }
     var update = new Update(config)
   }
 }
@@ -19,6 +22,10 @@ function isMobile() {
   return Agents.some((i) => {
     return userAgent.includes(i)
   })
+}
+
+function isMac () {
+  return navigator.userAgent.toLowerCase().indexOf('mac') > -1
 }
 
 /**
@@ -36,7 +43,9 @@ function isMobile() {
     this.uiWrapper = document.getElementById(wrapperId)       // 界面层el
     this.cursorEl = document.getElementById('footer-tips')    // 鼠标el
 
-    this.progEl = document.getElementById('prog')             // 进度el
+    this.progEl = document.getElementById('prog')             // windows进度el
+    this.progBar = document.getElementById('prog-bar')        // mac进度条el
+
     this.controlEl = document.getElementById('control-btn')   // 控制el
 
     this.controlEl.addEventListener('click', () => {
@@ -62,6 +71,7 @@ function isMobile() {
     clearInterval(this.progTimer)
     this.prog = this.initProg
     this.progEl.innerHTML = this.prog
+    this.progBar.style.width = this.prog + '%'
     this.controlEl.innerHTML = '更 新'
     this.cursorEl.style.cursor = 'default'
     this.uiWrapper.style.display = 'none'
@@ -84,6 +94,8 @@ function isMobile() {
     this.controlWrapper.style.display = 'none'
     this.uiWrapper.style.display = 'block'
     this.controlEl.style.visibility = 'hidden'
+    this.progEl.innerHTML = this.prog
+    this.progBar.style.width = this.prog + '%'
 
     clearInterval(this.progTimer)
     this.progTimer = setInterval(() => {
@@ -97,6 +109,7 @@ function isMobile() {
         }
       }
       this.progEl.innerHTML = this.prog
+      this.progBar.style.width = this.prog + '%'
     }, Math.ceil(this.updateDuration * 60 * 1000 / 100))
   }
   // 进入全屏

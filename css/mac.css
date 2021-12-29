@@ -1,0 +1,39 @@
+#mac {
+    color: #fff;
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 12vh;
+}
+#mac > div {
+    width: 100%;
+}
+.mac-prog-box {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+.mac-logo-box img{
+    width: 140px;
+    height: auto;
+}
+.max-prog {
+    width: 300px;
+    /* min-width: 300px; */
+    height: 10px;
+    border-radius: 5px;
+    /* overflow: hidden; */
+    background-color: #262626;
+    border: 1px solid #333333;
+}
+#prog-bar {
+    background-color: #ccccccff;
+    width: 0%;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+    transition: width .5s;
+}
