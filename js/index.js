@@ -10,9 +10,8 @@ window.onload = () => {
     document.getElementById('control').style.display = 'none'
     document.getElementById('mobile-tips').style.display = 'block'
   } else {
-    if (!config.wrapperId && isMac()) {
-      config.wrapperId = 'mac'
-    }
+
+    var update = new Update(config)
 
     var radioEl = document.getElementById('radio-box')
     radioEl.addEventListener('click', function (e) {
@@ -20,10 +19,10 @@ window.onload = () => {
       var tagName = el.tagName.toLowerCase()
       if (tagName === 'input') {
         config.wrapperId = el.value
+        update.setUiWrapper()
       }
     })
 
-    var update = new Update(config)
   }
 }
 
@@ -52,17 +51,16 @@ function isMac () {
     this.progTimer = null     // 更新定时器
     this.controlWrapper = document.getElementById('control')  // 控制层
     this.cursorEl = document.getElementById('footer-tips')    // 鼠标el
-
     this.progEl = document.getElementById('prog')             // windows进度el
     this.progBar = document.getElementById('prog-bar')        // mac进度条el
 
     this.controlEl = document.getElementById('control-btn')   // 控制el
+    this.setUiWrapper()
 
     this.controlEl.addEventListener('click', () => {
       if (this.isFullScreen()) {
         this.init()
       } else {
-        this.uiWrapper = document.getElementById(config.wrapperId || this.defaultWrapper)       // 界面层el
         this.startUpdate()
       }
     })
@@ -75,6 +73,10 @@ function isMac () {
         this.init()
       }
     }
+  }
+
+  setUiWrapper() {
+    this.uiWrapper = document.getElementById(config.wrapperId || this.defaultWrapper)
   }
 
   // 初始化
