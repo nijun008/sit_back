@@ -9,7 +9,7 @@
 #### TODO
 - [x] Windows 界面优化
 - [x] 支持Mac
+- [x] Mac 界面Logo调小、垂直居中，进度条，去掉box-shaow
 - [ ] 域名备案
 - [ ] 修复 safari 兼容问题（全屏后界面未切换、或body背景为白色）
-- [ ] Mac 界面Logo调小、垂直居中
-- [ ] Mac 界面进度条，去掉box-shaow
+- [ ] 支持自定义更新界面

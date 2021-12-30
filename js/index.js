@@ -2,7 +2,7 @@ var config = {
   updateDuration: 60,             // 更新完成时间 单位：分钟
   completedExit: false,           // 更新完成是否退出
   initProg: 5,                    // 初始进度
-  wrapperId: undefined            // 更新界面容器id
+  wrapperId: 'mac'            // 更新界面容器id
 }
 
 window.onload = () => {
@@ -69,6 +69,7 @@ function isMac () {
   // 初始化
   init() {
     clearInterval(this.progTimer)
+    document.body.style.backgroundColor = '#fff'
     this.prog = this.initProg
     this.progEl.innerHTML = this.prog
     this.progBar.style.width = this.prog + '%'
@@ -88,6 +89,7 @@ function isMac () {
     if (!this.isFullScreen()) {
       this.fullScreen()
     }
+    document.body.style.backgroundColor = '#000'
     this.controlEl.innerHTML = '结 束'
     this.cursorEl.style.cursor = 'none'
 
@@ -115,7 +117,6 @@ function isMac () {
   // 进入全屏
   fullScreen(ele) {
     var element = ele || document.body
-  
     if (element.requestFullscreen) {
       element.requestFullscreen()
     } else if (element.msRequestFullscreen) {
@@ -145,7 +146,8 @@ function isMac () {
       document.mozFullScreen ||                         
       document.webkitIsFullScreen ||       
       document.webkitFullScreen || 
-      document.msFullScreen 
+      document.msFullScreen  ||
+      (document.body.clientHeight === window.screen.height)
    )
   }
 }
