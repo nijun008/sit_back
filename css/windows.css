@@ -9,11 +9,6 @@
   .loading:hover #control-btn {
     visibility: visible !important;
   }
-  .explain {
-    color: #666;
-    line-height: 30px;
-    font-size: 13px;
-  }
   .loading-content {
     color: #fff;
     letter-spacing: 1px;

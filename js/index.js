@@ -1,8 +1,8 @@
 var config = {
-  updateDuration: 60,             // 更新完成时间 单位：分钟
+  updateDuration: 30,             // 更新完成时间 单位：分钟
   completedExit: false,           // 更新完成是否退出
   initProg: 5,                    // 初始进度
-  wrapperId: 'mac'            // 更新界面容器id
+  wrapperId: ''                   // 更新界面容器id
 }
 
 window.onload = () => {
@@ -13,6 +13,16 @@ window.onload = () => {
     if (!config.wrapperId && isMac()) {
       config.wrapperId = 'mac'
     }
+
+    var radioEl = document.getElementById('radio-box')
+    radioEl.addEventListener('click', function (e) {
+      var el = e.target
+      var tagName = el.tagName.toLowerCase()
+      if (tagName === 'input') {
+        config.wrapperId = el.value
+      }
+    })
+
     var update = new Update(config)
   }
 }
@@ -32,15 +42,15 @@ function isMac () {
  * @param { object } config 配置
  */
  class Update {
-  constructor(config) {
-    const { updateDuration = 60, completedExit = false, initProg = 1, wrapperId = 'windows' } = config
+  constructor(options) {
+    const { updateDuration = 60, completedExit = false, initProg = 1 } = options
+    this.defaultWrapper = isMac() ? 'mac' : 'windows'
     this.updateDuration = updateDuration
     this.completedExit = completedExit
     this.initProg = initProg  // 初始进度
     this.prog = initProg      // 当前进度
     this.progTimer = null     // 更新定时器
     this.controlWrapper = document.getElementById('control')  // 控制层
-    this.uiWrapper = document.getElementById(wrapperId)       // 界面层el
     this.cursorEl = document.getElementById('footer-tips')    // 鼠标el
 
     this.progEl = document.getElementById('prog')             // windows进度el
@@ -52,6 +62,7 @@ function isMac () {
       if (this.isFullScreen()) {
         this.init()
       } else {
+        this.uiWrapper = document.getElementById(config.wrapperId || this.defaultWrapper)       // 界面层el
         this.startUpdate()
       }
     })
