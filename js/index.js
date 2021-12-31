@@ -2,7 +2,8 @@ var config = {
   updateDuration: 30,             // 更新完成时间 单位：分钟
   completedExit: false,           // 更新完成是否退出
   initProg: 5,                    // 初始进度
-  wrapperId: ''                   // 更新界面容器id
+  wrapperId: '',                  // 更新界面容器id
+  viceScreen: 'off'               // 副屏模式
 }
 
 window.onload = () => {
@@ -13,12 +14,14 @@ window.onload = () => {
 
     var update = new Update(config)
 
-    var radioEl = document.getElementById('radio-box')
-    radioEl.addEventListener('click', function (e) {
+    var radioParent = document.getElementById('radio-box')
+
+    radioParent.addEventListener('click', function (e) {
       var el = e.target
       var tagName = el.tagName.toLowerCase()
       if (tagName === 'input') {
-        config.wrapperId = el.value
+        console.log(el.name)
+        config[el.name] = el.value
         update.setUiWrapper()
       }
     })

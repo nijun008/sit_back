@@ -1,4 +1,4 @@
-html, body, div, p, h1, h2, h3, h4, h5, h6, span, img, a, ul, li, ol, button, script {
+html, body, div, p, h1, h2, h3, h4, h5, h6, span, img, a, ul, li, ol, button, script, input, label {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -62,7 +62,11 @@ button {
 #radio-box .flex {
   margin-right: 10px;
 }
+.config-label {
+  width: 100px;
+}
 #radio-box input, #radio-box label {
+  padding-left: 8px;
   cursor: pointer;
 }
 .explain {

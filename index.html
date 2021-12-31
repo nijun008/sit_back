@@ -34,17 +34,29 @@
     <div id="control" class="wrapper">
       <h3 class="main-title">休息片刻，让你的电脑看起来在更新</h3>
       <button id="control-btn">更 新</button>
-      <div class="flex center middle" id="radio-box">
-        <div>更新界面：</div>
-        <div class="flex middle">
-         <input name="wrapper" type="radio" value="" id="radio-auto" checked="true"><label for="radio-auto">自动</label>
+      <div id="radio-box">
+        <div class="flex center middle">
+          <div class="config-label">更新界面：</div>
+          <div class="flex middle">
+          <input name="wrapperId" type="radio" value="" id="radio-auto" checked="true"><label for="radio-auto">自动</label>
+          </div>
+          <div class="flex middle">
+            <input name="wrapperId" type="radio" value="windows" id="radio-windows"><label for="radio-windows">windows</label>
+          </div>
+          <div class="flex middle">
+            <input name="wrapperId" type="radio" value="mac" id="radio-mac"><label for="radio-mac">Mac</label>
+          </div>
         </div>
-        <div class="flex middle">
-          <input name="wrapper" type="radio" value="windows" id="radio-windows"><label for="radio-windows">windows</label>
-         </div>
-         <div class="flex middle">
-          <input name="wrapper" type="radio" value="mac" id="radio-mac"><label for="radio-mac">Mac</label>
-         </div>
+
+        <div class="flex center middle">
+          <div class="config-label">副屏模式：</div>
+          <div class="flex middle">
+          <input name="viceScreen" type="radio" value="" id="vice-off" checked="true"><label for="vice-off">关闭</label>
+          </div>
+          <div class="flex middle">
+            <input name="viceScreen" type="radio" value="windows" id="vice-on"><label for="vice-on">开启</label>
+          </div>
+        </div>
       </div>
       <div class="explain">
         <p>鼠标移入底部可以隐藏</p>
