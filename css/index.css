@@ -54,12 +54,16 @@ button {
   margin-bottom: 100px;
 }
 #control-btn {
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
-#radio-box {
-  
+#radio-box .fixeld-row {
+  width: 100%;
+  margin-bottom: 14px;
 }
-#radio-box .flex {
+.fixeld {
+  width: 306px;
+}
+.fixeld .flex{
   margin-right: 10px;
 }
 .config-label {

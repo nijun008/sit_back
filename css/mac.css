@@ -1,12 +1,13 @@
-#mac {
+.mac-box {
+    height: 100%;
     color: #fff;
-    display: flex !important;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
     padding-bottom: 0vh;
 }
-#mac > div {
+.mac-box > div {
     width: 100%;
 }
 .mac-prog-box {

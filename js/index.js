@@ -20,7 +20,6 @@ window.onload = () => {
       var el = e.target
       var tagName = el.tagName.toLowerCase()
       if (tagName === 'input') {
-        console.log(el.name)
         config[el.name] = el.value
         update.setUiWrapper()
       }
@@ -62,19 +61,59 @@ function isMac () {
 
     this.controlEl.addEventListener('click', () => {
       if (this.isFullScreen()) {
-        this.init()
+        this.exitUpdate()
       } else {
-        this.startUpdate()
+        this.enterUpdate()
       }
     })
 
     window.onresize = () => {
       var isFull = this.isFullScreen()
       if (isFull) {
-        this.startUpdate()
+        this.enterUpdate()
       } else {
-        this.init()
+        this.exitUpdate()
       }
+    }
+  }
+
+  exitUpdate() {
+    switch(config.viceScreen) {
+      case 'off':
+        this.init()
+        break
+      case 'on':
+        this.showWrapper()
+      default:
+        break
+    }
+  }
+
+  enterUpdate() {
+    switch(config.viceScreen) {
+      case 'off':
+        this.startUpdate()
+        break
+      case 'on':
+        this.hideWrapper()
+      default:
+        break
+    }
+  }
+
+  hideWrapper () {
+    document.body.style.backgroundColor = '#000'
+    this.controlWrapper.style.display = 'none'
+    if (!this.isFullScreen()) {
+      this.fullScreen()
+    }
+  }
+
+  showWrapper () {
+    document.body.style.backgroundColor = '#fff'
+    this.controlWrapper.style.display = 'block'
+    if (this.isFullScreen()) {
+      this.exitFullscreen()
     }
   }
 
