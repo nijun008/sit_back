@@ -44,9 +44,9 @@ function isMac () {
  */
  class Update {
   constructor(options) {
-    const { updateDuration = 60, completedExit = false, initProg = 1 } = options
+    const { completedExit = false, initProg = 1 } = options
     this.defaultWrapper = isMac() ? 'mac' : 'windows'
-    this.updateDuration = updateDuration
+
     this.completedExit = completedExit
     this.initProg = initProg  // 初始进度
     this.prog = initProg      // 当前进度
@@ -167,7 +167,7 @@ function isMac () {
       }
       this.progEl.innerHTML = this.prog
       this.progBar.style.width = this.prog + '%'
-    }, Math.ceil(this.updateDuration * 60 * 1000 / 100))
+    }, Math.ceil(config.updateDuration * 60 * 1000 / 100))
   }
   // 进入全屏
   fullScreen(ele) {
