@@ -107,3 +107,16 @@ button {
   position: absolute;
   cursor: none;
 }
+.ipc-info {
+  /* padding-top: 10vh; */
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  z-index: 3;
+}
+.ipc-info a {
+  color: #9a9a9a;
+  font-size: 12px;
+}
